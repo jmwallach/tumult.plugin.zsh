@@ -8,6 +8,8 @@
 # License: Apache 2
 
 set -o pipefail
+source tumult-functions
+
 
 if [[ -n "$DEBUG" ]]; then
   set -x

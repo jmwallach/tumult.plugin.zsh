@@ -6,26 +6,14 @@
 # License: Apache 2
 
 set -o pipefail
+source tumult-functions
 
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1
 fi
 
-function check-dependency() {
-  if ! (builtin command -V "$1" >/dev/null 2>&1); then
-      fail "Missing dependency: can't find $1 in your PATH"
-  fi
-}
 
-function only-run-on() {
-  # shellcheck disable=SC2086
-  if [[ "$(uname -s | tr '[:upper:]' '[:lower:]')" != "$(echo $1 | tr '[:upper:]' '[:lower:]')" ]]; then
-    fail "This script only runs on $1, this machine is running $(uname -s)"
-  else
-    debug "OS ($(uname -s)) is valid..."
-  fi
-}
 
 only-run-on darwin
 check-dependency defaults

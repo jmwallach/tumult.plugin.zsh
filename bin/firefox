@@ -1,6 +1,9 @@
 #!/bin/bash
 #
 # Force opening a URL with Firefox
+
+source tumult-functions
+
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1

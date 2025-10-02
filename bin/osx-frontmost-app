@@ -3,12 +3,8 @@
 # Originally from oh-my-zsh's osx.plugin.zsh by Sorin Ionescu <sorin.ionescu@gmail.com>
 # MIT License
 
-function only-run-on() {
-  if [[ "$(uname -s)" != "$1" ]]; then
-    echo "This script only runs on $1"
-    exit 1
-  fi
-}
+source tumult-functions
+
 
 only-run-on Darwin
 

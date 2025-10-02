@@ -2,20 +2,14 @@
 #
 # https://github.com/rtomayko/dotfiles/blob/rtomayko/bin/markdown-open
 
+source tumult-functions
+
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1
 fi
 
-function debug() {
-  echo "$@" 1>&2
-}
 
-function check-dependency() {
-  if ! (builtin command -V "$1" >/dev/null 2>&1); then
-    fail "missing dependency: can't find $1 in your PATH"
-  fi
-}
 
 check-dependency sundown
 

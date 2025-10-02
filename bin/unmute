@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source tumult-functions
+
 if [[ "$(uname -s)" = 'Darwin' ]]; then
   exec osascript -e 'set volume output muted false'
 else

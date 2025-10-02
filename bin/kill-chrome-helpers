@@ -4,6 +4,8 @@
 #
 # Copyright 2020, Joe Block
 
+source tumult-functions
+
 set -o pipefail
 
 # shellcheck disable=SC2068,SC2009

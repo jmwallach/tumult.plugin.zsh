@@ -5,6 +5,8 @@
 # Copyright 2022, Joe Block <jpb@unixorn.net>
 
 set -o pipefail
+source tumult-functions
+
 
 case $(uname) in
   Darwin)

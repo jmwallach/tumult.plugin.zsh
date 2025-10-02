@@ -7,6 +7,8 @@
 # License: Apache 2.0
 
 set -o pipefail
+source tumult-functions
+
 
 function fail {
   printf '%s\n' "$1" >&2  ## Write message to stderr.

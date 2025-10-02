@@ -6,6 +6,8 @@
 
 set -e
 set -o pipefail
+source tumult-functions
+
 
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source tumult-functions
+
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1

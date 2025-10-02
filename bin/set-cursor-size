@@ -4,6 +4,8 @@
 #
 # set-cursor-size: A command line utility that controls macOS pointer size.
 
+source tumult-functions
+
 if [[ -n "$DEBUG" ]]; then
   # shellcheck disable=SC2086
   if [[ "$(echo $DEBUG | tr '[:upper:]' '[:lower:]')" == "verbose" ]]; then
@@ -11,48 +13,12 @@ if [[ -n "$DEBUG" ]]; then
   fi
 fi
 
-function echo-stderr() {
-  printf '%s\n' "$1" >&2  ## Send message to stderr. Exclude >&2 if you don't want it that way.
+
+
 }
 
-function debug() {
-  if [[ -n "$DEBUG" ]]; then
-    echo-stderr "$@"
-    fi
-  }
 
-function fail() {
-  echo-stderr "$1"
-  exit "${2-1}"  ## Return a code specified by $2 or 1 by default.
-}
 
-function has() {
-  # Check if a command is in $PATH
-  which "$@" > /dev/null 2>&1
-}
-
-function check-dependencies() {
-  debug "Checking dependencies..."
-  # shellcheck disable=SC2041
-  # Placeholders for whatever programs you really need
-  for dep in "$@"
-  do
-    if ! has "$dep"; then
-      fail "Can't find $dep in your $PATH"
-    else
-      debug "- Found $dep"
-    fi
-  done
-}
-
-function only-run-on() {
-  # shellcheck disable=SC2086
-  if [[ "$(uname -s | tr '[:upper:]' '[:lower:]')" != "$(echo $1 | tr '[:upper:]' '[:lower:]')" ]]; then
-    fail "This script only runs on $1, this machine is running $(uname -s)"
-  else
-    debug "OS ($(uname -s)) is valid..."
-  fi
-}
 
 function usage() {
   # shellcheck disable=SC2086

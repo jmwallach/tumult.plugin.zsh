@@ -9,6 +9,8 @@
 # This script allows you to set the warning threshold to a different number
 # of gigabytes of free space before Mojave whines at you.
 
+source tumult-functions
+
 DISKSPACE_D_PLIST='/System/Library/LaunchAgents/com.apple.diskspaced.plist'
 
 if [[ ! -f $DISKSPACE_D_PLIST ]]; then

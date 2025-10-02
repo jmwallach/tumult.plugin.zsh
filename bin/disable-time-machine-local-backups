@@ -6,6 +6,8 @@
 #
 # Based on information at https://herrbischoff.com/code/me/awesome-macos-command-line
 
+source tumult-functions
+
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1

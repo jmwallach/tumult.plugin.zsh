@@ -6,6 +6,8 @@
 # You can work around this by opening Apple's hotspot detection page
 # in Safari, so here's a command line tool to do so.
 
+source tumult-functions
+
 if [[ "$(uname -s)" != 'Darwin' ]]; then
   echo 'Sorry, this script only works on macOS'
   exit 1

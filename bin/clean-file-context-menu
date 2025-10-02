@@ -5,6 +5,8 @@
 # Copyright 2021, Joe Block <jpb@unixorn.net>
 
 set -o pipefail
+source tumult-functions
+
 if [[ -n "$DEBUG" ]]; then
   set -x
 fi

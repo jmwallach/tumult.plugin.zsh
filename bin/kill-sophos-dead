@@ -4,4 +4,6 @@
 # use just one CPU core, if you need to get work done, this will kill
 # its scanner process.
 
+source tumult-functions
+
 exec sudo /bin/sh -c 'while true; do pkill -9 com.sophos.endpoint.scanextension; sleep 1; done'
