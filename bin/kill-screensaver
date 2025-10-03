@@ -9,10 +9,7 @@ set -o pipefail
 source tumult-functions
 
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 # macOS doesn't ship with pgrep, so ps | grep instead
 # shellcheck disable=SC2009,SC2046

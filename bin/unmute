@@ -2,9 +2,5 @@
 
 source tumult-functions
 
-if [[ "$(uname -s)" = 'Darwin' ]]; then
-  exec osascript -e 'set volume output muted false'
-else
-  echo "$0 is only works on macOS"
-  exit 1
-fi
+only-run-on Darwin
+exec osascript -e 'set volume output muted false'

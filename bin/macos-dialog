@@ -13,19 +13,12 @@ if [[ -n "$DEBUG" ]]; then
 fi
 
 
-}
-
-
 consoleUser() {
 	echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }'
 }
 
-check-deps() {
-  if [[ "$(uname -s)" != 'Darwin' ]]; then
-    echo 'Sorry, this script only works on macOS'
-    exit 1
-  fi
 
+check-deps() {
   if ! has launchctl; then
     fail "Can't find launchctl in your PATH"
   fi
@@ -54,5 +47,6 @@ ask-dialog() { # $1: message $2: default text
   fi
 }
 
+only-run-on Darwin
 check-deps
 ask-dialog "$@"

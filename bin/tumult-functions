@@ -1,3 +1,5 @@
+#/usr/bin/env sh
+
 function check-dependencies() {
   debug "Checking dependencies..."
   # shellcheck disable=SC2041

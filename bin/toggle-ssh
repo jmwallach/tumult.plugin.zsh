@@ -2,10 +2,7 @@
 
 source tumult-functions
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 if [[ "$(whoami)" != "root" ]]; then
   echo "This script must be run by root or with sudo"

@@ -21,19 +21,10 @@ usage() {
   echo "  ${name} play"
 }
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
-
 if [[ $# != 1 ]]; then
  usage
  exit
 fi
-
-
-}
-
 
 
 only-run-on darwin

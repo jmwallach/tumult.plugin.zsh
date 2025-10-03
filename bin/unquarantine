@@ -9,10 +9,7 @@ set -e
 source tumult-functions
 
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 # Manually remove a downloaded app or file from the quarantine
 for attribute in com.apple.metadata:kMDItemDownloadedDate com.apple.metadata:kMDItemWhereFroms com.apple.quarantine; do

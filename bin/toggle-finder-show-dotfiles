@@ -6,10 +6,7 @@
 
 source tumult-functions
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 if [ -n "$1" ]; then
   show_dotfiles=$1

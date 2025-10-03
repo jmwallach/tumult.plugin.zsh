@@ -11,10 +11,7 @@ if [[ -n "$DEBUG" ]]; then
   set -x
 fi
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 # show --last 6h instead of stream will only dispay the last 6h, then quit.
 log stream --color always --predicate 'subsystem == "com.apple.TimeMachine"' --info | grep -v ' SmCp'

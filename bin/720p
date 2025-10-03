@@ -19,10 +19,6 @@
 source tumult-functions
 
 
-}
-
-
-
 only-run-on darwin
 check-dependency osascript
 

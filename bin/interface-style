@@ -4,29 +4,20 @@
 #
 # Copyright 2022-2025, Joe Block <jpb@unixorn.net>
 
-source tumult-functions
 
 set -o pipefail
-if [[ -n "$DEBUG" ]]; then
-  set -x
-fi
-
-
-}
-
-
+source tumult-functions
 
 
 
 function interface-style() {
-  if [[ "$(uname -s)" = "Darwin" ]]; then
     if defaults read -g AppleInterfaceStyle &>/dev/null
     then
       echo "Dark"
       exit 0
+    else
+      echo "Light"
     fi
-    echo "Light"
-  fi
 }
 
 only-run-on darwin

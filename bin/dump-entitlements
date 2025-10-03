@@ -16,27 +16,6 @@ IFS=$'\n\t'
 # This makes bash consider newlines and tabs as separating words
 # See: http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
-function echo-stderr() {
-  printf '%s\n' "$1" >&2  ## Send message to stderr. Exclude >&2 if you don't want it that way.
-}
-
-function fail() {
-  echo-stderr "$1"
-  exit "${2-1}"  ## Return a code specified by $2 or 1 by default.
-}
-
-function check-dependency() {
-  if ! (builtin command -V "$1" >/dev/null 2>&1); then
-    fail "Missing dependency: can't find $1 in your PATH"
-  fi
-}
-
-function only-run-on() {
-  if [[ "$(uname -s)" != "$1" ]]; then
-    fail "This script only runs on $1"
-  fi
-}
-
 function usage {
   echo
   echo "  Find all binaries on disk, dump their entitlements, uniquely sort the entitlements"

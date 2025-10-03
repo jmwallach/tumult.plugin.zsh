@@ -17,22 +17,13 @@ if [[ -n "$DEBUG" ]]; then
 fi
 
 
-
-}
-
-
-
-
 function usage() {
   echo "Usage: $(my-name) INTEGER_DAYS"
   echo
   echo "If days are not specified, $(my-name) will reset the check interval to ${DEFAULT_UPDATE_INTERVAL}"
 }
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  fail 'Sorry, this script only works on macOS'
-fi
-
+only-run-on Darwin
 check-dependencies
 
 if [[ $# != 1 ]]; then

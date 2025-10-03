@@ -1,9 +1,6 @@
 #! /usr/bin/env osascript
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-  echo 'Sorry, this script only works on macOS'
-  exit 1
-fi
+only-run-on Darwin
 
 tell app "iTerm2" to tell current session of first window
     contents

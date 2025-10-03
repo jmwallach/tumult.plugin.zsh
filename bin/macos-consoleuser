@@ -14,16 +14,10 @@ if [[ -n "$DEBUG" ]]; then
 fi
 
 
-}
-
-
 consoleUser() {
 	echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ && ! /loginwindow/ { print $3 }'
 }
 
-if [[ "$(uname -s)" != 'Darwin' ]]; then
-   echo 'Sorry, this script only works on macOS'
-   exit 1
- fi
+only-run-on Darwin
 
 consoleUser
